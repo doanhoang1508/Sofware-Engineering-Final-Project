@@ -13,8 +13,7 @@ This is a web application designed to allow users to manage their home appliance
 ## Requirements
 It is built using Flask Python framework for the backend and HTML, CSS for the frontend
 ## Installation 
-* Install the required dependencies by running the command:
-'pip install -r requirements.txt'
+* Install the required dependencies.
 * Start the application by running the command:
 'python main.py'
 * This command will start the application on your local machine at the address: http://localhost:5000
