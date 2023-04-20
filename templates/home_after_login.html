@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Simple Website Design</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ymk8ZWaWYXRSbp2QsSZs1m0nUkSEeUo7/X2EGS1UxR1ZSSDWdXfOsMC3o/s4Bp7MDu6ocL81p7efgNLPCNxjVw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/style.css')}}">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("result").innerHTML = localStorage.getElementById("passValue");
+
+    </script>
+
+
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="/home"><img width=10% src="{{url_for('static',filename='images/smarthome_icon.jpg')}}"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/help_info">HELP & INFO</a></li>
+                    <li><a href="/logout">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+        </nav>
+        <div id="clock"></div>
+        <script>
+            // JavaScript code for clock functionality
+            function updateClock() {
+                let now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let seconds = now.getSeconds();
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                let timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+                document.getElementById("clock").textContent = timeString;
+            }
+
+            setInterval(updateClock, 1000);
+
+        </script>
+
+        <!--<div class="weather-card">
+            <div class="location1">
+                <p><span id="current-date"></span></p>
+
+            </div>-->
+        <!--<div class="weather-details">
+                <div class="temperature">
+                    <h1>20°C</h1>
+                    <img src="https://cdn3.iconfinder.com/data/icons/weather-344/142/sunny-512.png">
+                </div>
+                <div class="description">
+                    <p>Have a good day !!!</p>
+                </div>
+            </div>-->
+
+        <div class="text-box">
+            <h1>Welcome <span id="result"></span> {{data}}</h1>
+            <p>Home appliance control using hand gestures <br>
+            </p>
+            <a href="/help_info" class="hero-btn red-btn"> Click here for more</a>
+        </div>
+
+    </section>
+
+    <section class="campus">
+        <h1>HOME</h1>
+        <div class="row">
+            <div class="blog-left1">
+                <div class="facilities-col">
+                    <img src="/static/images/livingroom1.jpg">
+                    <div class="layer">
+                        <h3>
+                            <a href="/floor-1-rooms-devices" class="hero-btn red-btn"> VIEW</a>
+                        </h3>
+                    </div>
+                    <h3>First Floor</h3>
+                    <p>---</p>
+                </div>
+            </div>
+
+            <div class="blog-mid">
+                <div class="facilities-col">
+                    <img src="/static/images/bedroom1.jpg">
+                    <div class="layer">
+                        <h3>
+                            <a href="/floor-2-rooms-devices" class="hero-btn red-btn"> VIEW</a>
+                        </h3>
+                    </div>
+                    <h3>Second Floor</h3>
+                    <p>---</p>
+                </div>
+            </div>
+            <div class="blog-right1">
+                <div class="facilities-col">
+                    <img src="/static/images/rooftop.jpg">
+                    <div class="layer">
+                        <h3>
+                            <a href="/floor-3-rooms-devices" class="hero-btn red-btn"> VIEW</a>
+                        </h3>
+                    </div>
+                    <h3>Third Floor</h3>
+                    <p>---</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!-- the DIV that will contain the widget -->
+        <div class="weatherWidget"></div>
+
+        <script>
+            window.weatherWidgetConfig = window.weatherWidgetConfig || [];
+            window.weatherWidgetConfig.push({
+                selector: ".weatherWidget",
+                apiKey: "KZBAL6QSPDDNQ8WMZTJG7JQGZ", //Sign up for your personal key
+                location: "Hanoi, Vietnam", //Enter an address
+                unitGroup: "metric", //"us" or "metric"
+                forecastDays: 5, //how many days forecast to show
+                title: "Hanoi,Vietnam", //optional title to show in the 
+                showTitle: true,
+                showConditions: true
+            });
+
+            (function() {
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+
+        </script>
+    </section>
+
+    <section>
+        <script>
+            function updateTime() {
+                const now = new Date();
+                const date = now.toLocaleDateString();
+                const time = now.toLocaleTimeString();
+                document.getElementById('current-date').textContent = date;
+                document.getElementById('current-time').textContent = time;
+            }
+            setInterval(updateTime, 1000); // update every second
+
+        </script>
+        <!--
+        <div class="weather-card">
+            <div class="location1">
+                <h2>City, Country</h2>
+                <p>Day, Date</p>
+            </div>
+            <div class="weather-details">
+                <div class="temperature">
+                    <h1>20°C</h1>
+                    <img src="https://cdn3.iconfinder.com/data/icons/weather-344/142/sunny-512.png">
+                </div>
+                <div class="description">
+                    <p>Sunny with a few clouds</p>
+                </div>
+            </div>
+        </div>
+-->
+
+    </section>
+
+    <!-- <section class="campus">
+        <h1>Your HOME</h1>
+        <a href="/createpage" class="hero-btn red-btn"> ADD ROOMS</a>
+    </section> -->
+
+    <!------Facilities---->
+    <!--
+
+    <section class="campus">
+        <h1>Your Rooms</h1>
+        <a href="" class="hero-btn red-btn"> Add Rooms</a>
+        <a href="" class="hero-btn red-btn"> Remove Rooms</a>
+        <div class="row">
+            <div class="blog-left1">
+                <div class="facilities-col">
+                    <img src="/static/images/living.jpg">
+                    <div class="layer">
+                        <h3>Living Room<br>
+                            <a href="/living_room" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Living Room</h3>
+                    <p>5 devices</p>
+                </div>
+                <div class="facilities-col">
+                    <img src="/static/images/kitchen.jpg">
+                    <div class="layer">
+                        <h3>Kitchen<br>
+                            <a href="/kitchen" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Kitchen</h3>
+                    <p>4 devices</p>
+                </div>
+
+            </div>
+
+            <div class="blog-mid">
+                <div class="facilities-col">
+                    <img src="/static/images/office.jpg">
+                    <div class="layer">
+                        <h3>Office<br>
+                            <a href="/office" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Office</h3>
+                    <p>10 devices</p>
+                </div>
+                <div class="facilities-col">
+                    <img src="/static/images/bedroom.jpg">
+                    <div class="layer">
+                        <h3>Bedroom<br>
+                            <a href="/bedroom" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Bedroom</h3>
+                    <p>6 devices</p>
+                </div>
+
+            </div>
+            <div class="blog-right1">
+                <div class="facilities-col">
+                    <img src="/static/images/bathroom.jpg">
+                    <div class="layer">
+                        <h3>Bathroom<br>
+                            <a href="/bathroom" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Bathroom</h3>
+                    <p>7 devices</p>
+                </div>
+                <div class="facilities-col">
+                    <img src="/static/images/diningroom.jpg">
+                    <div class="layer">
+                        <h3>Dining Room<br>
+                            <a href="/diningroom" class="hero-btn1"> Click here for more</a>
+                        </h3>
+                    </div>
+                    <h3>Dining Room</h3>
+                    <p>4 devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!--
+    <div class="container">
+        <div>
+        </div>
+        <div>
+            <table class="table">
+
+            </table>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <table class="table">
+                <thead style="background-color: brown;color: aliceblue;">
+                    <th>ID</th>
+                    <th>TYPE OF ROOM</th>
+                    <th>DEVICES</th>
+                    <th>ACTIONS</th>
+                </thead>
+
+                <tbody>
+                    {% for room in rooms %}
+                    <tr {% if loop.index %2==0 %} style="background-color: rgb(179, 179, 179);" {% else %} style="background-color: rgb(255, 255, 255);" {% endif %}>
+                        <td>{{ loop.index }}</td>
+                        <td>{{room.type_of_room}}</td>
+                        <td>{{room.devices}}</td>
+                        <td>
+                            <span style="font-size: 24px;color:green;">
+                                <a href="/{{room.id}}/view"> <i class="fa fa-eye"></i></a> </span>
+                            |
+                            <span style="font-size: 24px;color:green;">
+                                <a href="/{{room.id}}/edit"> <i class="fa fa-edit"></i></a> </span>
+                            |
+                            <span style="font-size: 24px;color:red;">
+                                <a href="/{{room.id}}/delete"> <i class="fa fa-trash"></i></a></span>
+                        </td>
+                        {% endfor %}
+                </tbody>
+            </table>
+
+    </div>
+    </section> -->
+    <!--- Call To Action ---->
+    <section class="cta">
+        <h1>OFFICIAL MEMBERSHIP INFORMATION </h1>
+        <a href="/help_info" class="hero-btn red-btn">CONTACT US</a>
+    </section>
+    <!----- fOOTER ----->
+    <section class="footer">
+        <h4>About Us </h4>
+        <p>©2023 fromddqwithluv</p>
+        <div class="icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Dong Quoc Dat & Tran Doan Hoang</p>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+</body>
+
+</html>

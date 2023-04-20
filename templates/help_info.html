@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Simple Website Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="/help-info"><img width=10% src="{{url_for('static',filename='images/smarthome_icon.jpg')}}"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/help_info">HELP & INFO</a></li>
+                    <li><a href="/logout">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+        </nav>
+        <h1>HELP & INFO</h1>
+
+    </section>
+    <!--------blog page content------------->
+    <section class="help_info">
+        <div class="hero">
+            <div class="tabs">
+                <button id="tab1">HELPS</button>
+                <button id="tab2">Hardware Warranties</button>
+                <button id="tab3">Software License Agreements</button>
+                <button id="tab4">AppCare Products</button>
+            </div>
+            <div class="content-box">
+                <div id="content1">
+                    <div id="content-text">
+                        <h1>HELPS</h1>
+                        <p>If you are experiencing issues with your smart home app, here are some repair options that you can try:
+                            <br><br>
+                            Check for updates: Make sure that your smart home app is up-to-date. Check your app store for any available updates and install them.
+                            <br><br>
+                            Clear cache and data: Clearing the cache and data of your smart home app can help fix some issues. Go to your device settings, find the app, and clear its cache and data.
+                            <br><br>
+                            Restart your device: Sometimes, restarting your device can help fix app issues. Simply turn off your device, wait a few seconds, and turn it back on.
+                            <br><br>
+                            Reinstall the app: If none of the above solutions work, try uninstalling and reinstalling your smart home app. Make sure to back up any important data before doing so.
+                            <br><br>
+                            Contact customer support: If you have tried all the above solutions and are still experiencing issues, reach out to the customer support team for your smart home app. They may be able to provide additional troubleshooting steps or escalate the issue to their technical team.
+                        </p>
+                    </div>
+                </div>
+                <div id="content2">
+                    <div id="content-text">
+                        <h1>Hardware Warranties</h1>
+                        <p>We offers a two-year limited warranty on our devices, which covers defects in materials and workmanship.
+                            <br><br>
+                            According to our warranty terms, if a device is found to be defective within the warranty period, we will repair or replace the device at no charge to the customer. The warranty also covers the cost of shipping the device to us for repair or replacement.
+                            <br><br>
+                            However, it's important to note that we warranty does not cover damage caused by accidents, misuse, or normal wear and tear. Additionally, the warranty does not cover any installation or removal costs associated with the device.
+                            <br><br>
+                            Overall, our warranty provides important protection for their smart home devices, but customers should be aware of the specific limitations and exclusions of the warranty before making a purchase.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="content3">
+                    <div id="content-text">
+                        <h1>Software License Agreements</h1>
+                        <p>IMPORTANT: READ THIS AGREEMENT CAREFULLY BEFORE USING THE SOFTWARE. BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT INSTALL OR USE THE SOFTWARE.
+                            <br><br>
+                            This Software License Agreement ("Agreement") is a legal agreement between you (either an individual or a single entity) and [company name] for the software accompanying this Agreement, which includes computer software, associated media, printed materials, and online or electronic documentation ("Software").
+                            <br><br>
+                            ...
+                            <br><br>
+                            By clicking "I Agree" or by installing, copying, or otherwise using the Software, you acknowledge that you have read
+                        </p>
+                    </div>
+                </div>
+                <div id="content4">
+                    <div id="content-text">
+                        <h1>AppCare Products</h1>
+                        <p>One example of AppCare Products smart home could be a smart thermostat. AppCare Products could design and manufacture a thermostat that is connected to a homeowner's Wi-Fi network, allowing them to control the temperature of their home remotely using their smartphone or other compatible devices.
+                            <br><br>
+                            The smart thermostat could also be integrated with other smart home devices, such as motion sensors and smart lighting, to adjust the temperature based on the occupancy of the home. For example, if no one is home, the thermostat could automatically lower the temperature to save energy, and then raise it back up when someone returns.
+                            <br><br>
+                            The thermostat could also learn the homeowner's habits and preferences, automatically adjusting the temperature based on their behavior. Additionally, it could provide energy usage reports and recommendations for ways to save energy and reduce utility bills.
+
+                            Overall, a smart thermostat is just one example of how AppCare Products could create a smart home product that is both convenient and energy-efficient.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <img src="/static/images/pic1.png">
+
+                <br>
+            </div>
+            <div class="blog-right">
+                <h3>CATEGORIES</h3>
+                <div>
+                    <span>App Repair Options</span>
+
+                </div>
+                <div>
+                    <span>Service and Repair Information</span>
+                </div>
+                <div>
+                    <span>AppCare Products</span>
+                </div>
+                <div>
+                    <span>Hardware Warranties</span>
+                </div>
+                <div>
+                    <span>Software License Agreements</span>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6835619347376!2d105.83923231534986!3d21.00531799395308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad591575f7bb%3A0x28c483c5b1697381!2zxJDhuqFpIEjhu41jIELDoWNoIEtob2EgSMOgIE7hu5lpIEPhu5VuZyBQYXJhYm9s!5e0!3m2!1sen!2s!4v1675326864493!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+
+                    <span>
+                        <h5><i class="fa fa-home"></i>
+                            ABC Road, XYZ Building</h5>
+                        <p>Hai Ba Trung District, Ha Noi</p>
+                    </span>
+                </div>
+                <div>
+
+                    <span>
+                        <h5><i class="fa fa-phone"></i>
+                            +8496626330</h5>
+                        <p>Monday to Saturday, 10AM to 6PM</p>
+                    </span>
+                </div>
+                <div>
+
+                    <span>
+                        <h5> <i class="fa fa-envelope-o"></i>
+                            dat.dq203795@sis.hust.edu.vn</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="https://formspree.io/f/xqkoqvjp" method="POST">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <input type="text" name="subject" placeholder="Enter your subject" required>
+                    <textarea rows="8" name="message" placeholder="Message"></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+        <script>
+            var tab1 = document.getElementById("tab1");
+            var tab2 = document.getElementById("tab2");
+            var tab3 = document.getElementById("tab3");
+            var tab4 = document.getElementById("tab4");
+            var content1 = document.getElementById("content1");
+            var content2 = document.getElementById("content2");
+            var content3 = document.getElementById("content3");
+            var content4 = document.getElementById("content4");
+
+            tab1.onclick = function() {
+                content1.style.transform = "translateY(0)";
+                content2.style.transform = "translateY(100%)";
+                content3.style.transform = "translateY(100%)";
+                content4.style.transform = "translateY(100%)";
+                content1.style.transitionDelay = "0.3s";
+                content2.style.transitionDelay = "0";
+                content3.style.transitionDelay = "0";
+                content4.style.transitionDelay = "0";
+                tab1.style.background = "#f1f1f1";
+                tab2.style.background = "transparent";
+                tab3.style.background = "transparent";
+                tab4.style.background = "transparent";
+                tab1.style.color = "#000"
+                tab2.style.color = "#fff"
+                tab3.style.color = "#fff"
+                tab4.style.color = "#fff"
+            }
+            tab2.onclick = function() {
+                content1.style.transform = "translateY(100%)";
+                content2.style.transform = "translateY(0)";
+                content3.style.transform = "translateY(100%)";
+                content4.style.transform = "translateY(100%)";
+                content1.style.transitionDelay = "0";
+                content2.style.transitionDelay = "0.3s";
+                content3.style.transitionDelay = "0";
+                content4.style.transitionDelay = "0";
+                tab1.style.background = "#transparent";
+                tab2.style.background = "f1f1f1";
+                tab3.style.background = "transparent";
+                tab4.style.background = "transparent";
+                tab1.style.color = "#fff"
+                tab2.style.color = "#000"
+                tab3.style.color = "#fff"
+                tab4.style.color = "#fff"
+            }
+            tab3.onclick = function() {
+                content1.style.transform = "translateY(100%)";
+                content2.style.transform = "translateY(100%)";
+                content3.style.transform = "translateY(0)";
+                content4.style.transform = "translateY(100%)";
+                content1.style.transitionDelay = "0";
+                content2.style.transitionDelay = "0";
+                content3.style.transitionDelay = "0.3s";
+                content4.style.transitionDelay = "0";
+                tab1.style.background = "#transparent";
+                tab2.style.background = "transparent";
+                tab3.style.background = "f1f1f1";
+                tab4.style.background = "transparent";
+                tab1.style.color = "#fff"
+                tab2.style.color = "#fff"
+                tab3.style.color = "#000"
+                tab4.style.color = "#fff"
+            }
+            tab4.onclick = function() {
+                content1.style.transform = "translateY(100%)";
+                content2.style.transform = "translateY(100%)";
+                content3.style.transform = "translateY(100%)";
+                content4.style.transform = "translateY(0)";
+                content1.style.transitionDelay = "0";
+                content2.style.transitionDelay = "0";
+                content3.style.transitionDelay = "0";
+                content4.style.transitionDelay = "0.3s";
+                tab1.style.background = "#transparent";
+                tab2.style.background = "transparent";
+                tab3.style.background = "transparent";
+                tab4.style.background = "f1f1f1";
+                tab1.style.color = "#fff"
+                tab2.style.color = "#fff"
+                tab3.style.color = "#fff"
+                tab4.style.color = "#000"
+            }
+
+        </script>
+    </section>
+    <!----- fOOTER ----->
+    <section class="footer">
+        <h4>About Us</h4>
+        <div class="icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Dong Quoc Dat & Tran Doan Hoang</p>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
